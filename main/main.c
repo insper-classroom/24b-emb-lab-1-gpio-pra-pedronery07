@@ -8,7 +8,7 @@
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
 
-int main() {
+ int main() {
     stdio_init_all();
     const int LED_PIN = 18;
     const int BTN_PIN = 5;
@@ -44,7 +44,7 @@ int main() {
             gpio_put(LED_PIN, !LED_STATE);
             LED_STATE = !LED_STATE;
             // Funcionamento do motor
-            while (true) {
+            for (int i = 0; i <= 512; i++) {
                 gpio_put(PIN1, 1);
                 sleep_ms(30);
                 gpio_put(PIN1, 0);
@@ -67,4 +67,6 @@ int main() {
             };
         }
     }
+    gpio_put(LED_PIN, 0);
+    LED_STATE = 0;
 }
