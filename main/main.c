@@ -68,5 +68,4 @@
         }
     }
     gpio_put(LED_PIN, 0);
-    LED_STATE = 0;
 }
